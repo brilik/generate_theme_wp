@@ -1,0 +1,9 @@
+asd as
+sa sad
+ asd
+
+ тут должно изменить %template_theme_description% asd
+
+  a
+  asd
+   ads
