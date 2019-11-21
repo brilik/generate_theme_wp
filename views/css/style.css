@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* reset */
 /* main variables */
 body {
@@ -71,7 +72,7 @@ form {
   margin: 0px; }
 
 a {
-  color: #100da9;
+  color: #105fa9;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -113,7 +114,190 @@ button {
   clear: both;
   visibility: hidden; }
 
-header {
-  background-color: #dd4814; }
+#app {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background: url(../img/mountains.jpeg) no-repeat;
+  background-size: cover; }
+
+main {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto; }
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+  width: 300px;
+  min-height: 100px;
+  color: rgba(255, 255, 255, 0.85);
+  display: inline-block;
+  font-size: 10px;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 10px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset -1px 1px 0px rgba(255, 255, 255, 0.3), inset 1px 1px 0px rgba(255, 255, 255, 0.3);
+  -moz-box-shadow: inset -1px 1px 0px rgba(255, 255, 255, 0.3), inset 1px 1px 0px rgba(255, 255, 255, 0.3);
+  box-shadow: inset -1px 1px 0px rgba(255, 255, 255, 0.3), inset 1px 1px 0px rgba(255, 255, 255, 0.3);
+  border: 1px solid #000;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.3)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)); }
+  .form h2 {
+    font-size: 20px;
+    margin: .5em;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 900; }
+  .form input, .form label {
+    outline: none; }
+  .form input, .form textarea {
+    font-size: 150%;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 45px;
+    padding: .3em 20px .3em 40px;
+    width: 270px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 0;
+    border-radius: 25px;
+    box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.8) inset; }
+  .form textarea {
+    height: 60px; }
+  .form ::-webkit-scrollbar {
+    /* chrome based */
+    width: 0;
+    /* ширина scrollbar'a */
+    background: transparent;
+    /* опционально */ }
+  .form [for="theme_name"] {
+    top: 70px; }
+  .form [for="theme_name"]:before {
+    text-indent: 0;
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 120%;
+    z-index: 1; }
+  .form input[type="submit"] {
+    position: absolute;
+    padding: 0;
+    right: 17px;
+    height: 43px;
+    width: 65px;
+    background-color: #6bac14;
+    border: 0;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 0 5px 2px #a6ee40 inset, 1px 1px 0 rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 10px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    text-align: center; }
+  .form input[type="submit"]:hover {
+    opacity: 0.9; }
+
+.form-generate form {
+  display: block;
+  border: none;
+  min-height: 45px; }
+  .form-generate form input {
+    margin-bottom: 10px; }
+.form-generate .btn-form-advanced {
+  color: lightgrey;
+  font-size: 11px; }
+  .form-generate .btn-form-advanced:hover {
+    text-decoration: underline; }
+
+#success {
+  padding: 7px;
+  text-align: center;
+  color: #dd4814; }
+
+.center {
+  text-align: center; }
+
+.padding-b-10 {
+  padding-bottom: 10px; }
+
+.padding-t-10 {
+  padding-top: 10px; }
+
+*, *:before, *:after {
+  transition: .25s ease-in-out; }
+
+.checkbox-label {
+  display: block;
+  background: #f3f3f3;
+  height: 20px;
+  width: 50px;
+  border-radius: 50px;
+  margin: 10px auto;
+  position: relative;
+  box-shadow: 0 0 0 2px #dddddd; }
+  .checkbox-label .on {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    min-width: 70px;
+    line-height: 20px;
+    opacity: 0;
+    color: #6bac14; }
+  .checkbox-label .off {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    right: 70px;
+    text-align: right;
+    opacity: 1;
+    min-width: 70px;
+    line-height: 20px;
+    color: #bbbbbb; }
+  .checkbox-label:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    background: white;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 0 0 2px #dddddd; }
+
+.checkbox {
+  position: absolute;
+  left: -5000px; }
+  .checkbox:checked + .checkbox-label {
+    background: #6bac14;
+    box-shadow: 0 0 0 2px #6bac14; }
+    .checkbox:checked + .checkbox-label .on {
+      left: 70px;
+      opacity: 1; }
+    .checkbox:checked + .checkbox-label .off {
+      right: 0;
+      opacity: 0; }
+    .checkbox:checked + .checkbox-label:before {
+      left: 30px;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 0 0 2px #6bac14; }
 
 /*# sourceMappingURL=style.css.map */

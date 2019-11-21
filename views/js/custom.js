@@ -2,6 +2,7 @@
 let pathToRequest = 'controllers/ajax/request.php';
 let divSuccess = document.getElementById('success');
 let form = document.getElementsByClassName('form-generate')[0].querySelector('form');
+let btnAdvanced = document.getElementsByClassName('js-show-advanced')[0];
 
 // functions
 function serialize(form) {
@@ -18,6 +19,7 @@ function serialize(form) {
                 switch (form.elements[i].type) {
                     case 'text':
                     case 'tel':
+                    case 'url':
                     case 'email':
                     case 'hidden':
                     case 'password':
@@ -66,13 +68,17 @@ function serialize(form) {
     }
     return q.join("&");
 }
-function download(request,pathname){
+function toggle(el) {
+    el.style.display = (el.style.display === 'none') ? 'block' : 'none'
+}
+function download(request, pathname) {
     var link = document.createElement('a');
     document.body.appendChild(link);
     link.href = window.URL.createObjectURL(request.response);
     link.download = pathname;
     link.click()
 }
+
 // actions
 form.onsubmit = function (e) {
     // Stop default send
@@ -86,28 +92,34 @@ form.onsubmit = function (e) {
     // Send POST-request
     xhr.send(serialize(form));
     // Install function-handler for changing property readyState
-    xhr.onreadystatechange = function () {
+    xhr.onreadystatechange = function (e) {
         if (xhr.readyState === 4) { // check answer from server and ready for processing
             if (xhr.status === 200) { // check success answer
+                console.log(JSON.parse(xhr.response));
+                /*
                 // Object
                 let result = JSON.parse(xhr.responseText);
                 // Show validation errors
-                if(result.errors ) {
+                if (result.errors) {
                     divSuccess.innerHTML = result.errors.join('<br>');
                     return false;
                 }
                 // Show success generate theme
-                if( result.themeName ){
+                if (result.themeName) {
                     divSuccess.innerHTML = result.themeName;
                 }
                 // Download archive theme
-                if( result.getArchive ){
-                    // window.location.href = result.getArchive;
+                if (result.getArchive) {
                     console.log(result.getArchive);
-                    // download(xhr, result.getArchive);
-                    window.location = result.getArchive;
+                    // window.location = result.getArchive;
                 }
+                */
             }
         }
     };
+};
+
+btnAdvanced.onclick = function(){
+    let box = document.getElementsByClassName('box-form-advanced')[0];
+    toggle(box);
 };
