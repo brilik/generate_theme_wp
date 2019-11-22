@@ -46,7 +46,7 @@
                         <textarea name="description" id="description" cols="30" rows="10" placeholder="Input description..."></textarea>
                     </div>
                     <div class="box-woo">
-                        <input class="checkbox" id="checkbox1" type="checkbox"/>
+                        <input class="checkbox" id="checkbox1" type="checkbox" name="woo">
                         <label for="checkbox1" class="checkbox-label">
                             <span class="on">Enable Woo</span>
                             <span class="off">Disable Woo</span>
